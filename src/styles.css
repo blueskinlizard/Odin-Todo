@@ -1,0 +1,114 @@
+:root{
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --light-blue: rgb(199, 225, 243);
+    --light-black: rgb(37, 37, 37);
+    --transparent-blue: rgba(44, 76, 122, 0.712);
+    --darker-blue: rgb(13, 73, 141);
+    --padding-horizontal: 10rem;
+}
+
+body{
+    background-image: url("images/icons/layered-waves-haikei\ \(1\).svg");
+    background-color: var(--light-black);
+    display: grid;
+    background-size:cover;
+}
+p{
+    color: var(--light-blue);
+    font-size: 2.6rem;
+    font-family: "Rubik", sans-serif;
+    margin-left: 0.8rem;
+    transition: background-color 0.25s ease-out, color 0.25s ease-in;
+}
+#house-svg, #folder-svg{
+    width: 1;
+}
+.navbar-left-content{
+    margin-left: 3rem;
+}
+.nav-grouping{
+    display: flex;
+}
+.nav-grouping i{
+    color: var(--light-blue);
+    margin-top: 2.3rem;
+    
+}
+.navbar-left p:hover{
+    cursor: pointer;
+    background-color: var(--light-blue);
+    color: var(--light-black);
+    border-radius: 0.3rem;
+}
+.create-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.content input, .content select{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+}
+.pop-up-title-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.pop-up-box h1{
+    color: var(--light-blue);
+    font-size: 4rem;
+}
+.pop-up-box{
+    background-color: var(--transparent-blue);
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 0.9rem;
+    padding: 5rem;
+    padding-left: var(--padding-horizontal);
+    padding-right: var(--padding-horizontal);
+}
+.pop-up-wrapper{
+    
+    display: flex;
+    justify-content: center;
+}
+#pop-up-box-task-create-form{
+    display: flex;
+    flex-direction: column;
+}
+#confirm-button, #cancel-button{
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 2.2rem;
+    transition: background-color 0.25s ease-out, color 0.25s ease-in, padding 0.25s ease-out;
+    color: whitesmoke;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+.button-wrappers{
+    margin-top: 3rem;
+}
+#confirm-button{
+    background-color: var(--darker-blue);
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+}
+#confirm-button:hover{
+    padding-left: 5.4rem;
+    padding-right: 5.4rem;
+    background-color: rgba(92, 232, 82, 0.515);
+}
+#cancel-button{
+    background-color: var(--darker-blue);
+    padding-right: 2.6rem;
+    padding-left: 2.6rem;
+}
+#cancel-button:hover{
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+    
+    background-color: rgba(231, 55, 43, 0.423);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/1ec857a77a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    
+    <div class="content">
+        <div class="navbar-left">
+            <div class="navbar-left-content">
+                <div class="nav-grouping">
+                    <i class="fa-solid fa-house fa-3x"></i>
+                    <p id="home-navbar-click">Home</p>
+                </div>
+                <div class="nav-grouping">
+                    <i class="fas fa-folder fa-3x"></i>
+                    <p id="projects-navbar-click">Projects</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="pop-up-wrapper">
+            <div class="pop-up-box">
+                <div class="pop-up-title-wrapper">
+                    <h1 id="pop-up-box-h1">Create task</h1>
+                </div>
+                <form id="pop-up-box-task-create-form">
+                    <div class="create-wrapper">
+                        <input placeholder="Task Name" id="title-input-form" name="title-input">
+                        <input placeholder= "MM/DD/YY" id="date-input-form" name="date-input">
+                        <select id="status-select-form" name="status-input">
+                            <option value="not-started">Not started</option>
+                            <option value="midway-through">Midway through</option>
+                            <option value="almost-finished">Almost finished</option>
+                        </select>
+                        <select id="project-select-form" name="project-input">
+                            <option value="placeholder">Nothing yet</option>
+                        </select>
+                    </div>
+                    <div class="button-wrappers">
+                        <button id="confirm-button">Add</button>
+                        <button id="cancel-button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
