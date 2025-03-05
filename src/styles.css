@@ -2,9 +2,9 @@
     font-size: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --light-blue: rgb(199, 225, 243);
-    --light-black: rgb(37, 37, 37);
-    --transparent-blue: rgba(44, 76, 122, 0.712);
-    --darker-blue: rgb(13, 73, 141);
+    --light-black: rgb(16, 16, 16);
+    --transparent-blue: rgba(67, 77, 92, 0.363);
+    --darker-blue: rgb(11, 69, 141);
     --padding-horizontal: 10rem;
 }
 
@@ -50,7 +50,8 @@ p{
     border-radius: 0.5rem;
     outline: none;
     border: none;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
 }
 .pop-up-title-wrapper{
     display: flex;
@@ -58,7 +59,7 @@ p{
 }
 .pop-up-box h1{
     color: var(--light-blue);
-    font-size: 4rem;
+    font-size: 5rem;
 }
 .pop-up-box{
     background-color: var(--transparent-blue);
@@ -100,6 +101,7 @@ p{
     padding-left: 5.4rem;
     padding-right: 5.4rem;
     background-color: rgba(92, 232, 82, 0.515);
+    cursor: pointer;
 }
 #cancel-button{
     background-color: var(--darker-blue);
@@ -109,6 +111,6 @@ p{
 #cancel-button:hover{
     padding-left: 3.6rem;
     padding-right: 3.6rem;
-    
+    cursor: pointer;
     background-color: rgba(231, 55, 43, 0.423);
 }
