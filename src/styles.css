@@ -69,11 +69,12 @@ p{
     padding: 5rem;
     padding-left: var(--padding-horizontal);
     padding-right: var(--padding-horizontal);
+    
 }
 .pop-up-wrapper{
     
     display: flex;
-    justify-content: center;
+    justify-content: center;    
 }
 #pop-up-box-task-create-form{
     display: flex;
@@ -113,4 +114,13 @@ p{
     padding-right: 3.6rem;
     cursor: pointer;
     background-color: rgba(231, 55, 43, 0.423);
+}
+#pop-up-box-task-create-form input, 
+#pop-up-box-task-create-form select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
 }
