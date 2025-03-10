@@ -13,10 +13,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         form.addEventListener("submit", (event) => {    
             event.preventDefault(); 
             pageDisplay.buttonSubmission();  
-            createTracker = 0;
+            createTracker = 0;  
         });
         }
-        
-        
     });
 

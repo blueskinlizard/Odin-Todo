@@ -1,4 +1,4 @@
-import {Projects} from "./projects";
+import Projects from "./projects";
 import Form from "./forms";
 export default class displayManipulation{
     constructor(){
@@ -6,6 +6,10 @@ export default class displayManipulation{
        this.formsArray = [];
        this.newButton = document.getElementById("create-new-button");
        this.form = document.getElementById("pop-up-box-task-create-form");
+       const DefaultProject = new Projects("Default");
+       this.projectsList = [];
+       this.projectsList.push(DefaultProject);
+       this.projectsList.push(new Projects("Second"));
     }
     createInputCard(){
 const popUpWrapper = document.createElement('div');
@@ -29,14 +33,13 @@ titleInput.name = 'title-input';
 const dateInput = document.createElement('input');
 dateInput.id = 'date-input-form';
 dateInput.name = 'date-input';
-dateInput.type = 'date';
+dateInput.placeholder = "MM/DD/YY";
 const statusSelect = document.createElement('select');
 statusSelect.id = 'status-select-form';
 statusSelect.name = 'status-input';
 const statusOptions = ['Not started', 'Midway through', 'Almost finished'];
 statusOptions.forEach(status => {
     const option = document.createElement('option');
-    option.value = status.toLowerCase().replace(' ', '-');
     option.textContent = status;
     statusSelect.appendChild(option);
 });
@@ -44,8 +47,8 @@ const projectSelect = document.createElement('select');
 projectSelect.id = 'project-select-form';
 projectSelect.name = 'project-input';
 const placeholderOption = document.createElement('option');
-placeholderOption.value = 'placeholder';
-placeholderOption.textContent = 'Nothing yet';
+this.displayProjectsForm(projectSelect);
+
 projectSelect.appendChild(placeholderOption);
 createWrapper.appendChild(titleInput);
 createWrapper.appendChild(dateInput);
@@ -74,11 +77,56 @@ document.body.appendChild(popUpWrapper);
         const status = document.getElementById("status-select-form").value;
         const project = document.getElementById("project-select-form").value;
         this.formsArray[this.arrayTracker] = new Form(taskName, dueDate, status, project);
+        this.displayFormsHomepage(this.formsArray[this.arrayTracker]);
         this.formsArrayTracker++;
         let wrapperRemover = document.getElementsByClassName("pop-up-wrapper");
         this.removeInputCard(wrapperRemover);
+        
+    }
+    displayProjectsForm(optionWrapper){
+        for(let i =0; i < this.projectsList.length; i++){
+            let option = document.createElement('option');
+            option.value = this.projectsList[i].name;
+            option.textContent = this.projectsList[i].name;
+            optionWrapper.appendChild(option);
+        }
     }
     removeInputCard(sectionName){
         sectionName[0].remove();
     }
+    displayFormsHomepage(form) {
+            const formsBaseDisplayWrapper = document.createElement('div');
+            formsBaseDisplayWrapper.classList.add('forms-base-display-wrapper');
+            const formsBaseDisplay = document.createElement('div');
+            formsBaseDisplay.classList.add('forms-base-display');
+            const formBase = document.createElement('div');
+            formBase.classList.add('form-base');
+            const formBaseTitle = document.createElement('h1');
+            formBaseTitle.id = 'form-base-title';
+            formBaseTitle.textContent = form.title; 
+            
+            const formBaseDate = document.createElement('h3');
+            formBaseDate.id = 'form-base-date';
+            formBaseDate.textContent = form.date; 
+            
+            const formBaseProgress = document.createElement('h3');
+            formBaseProgress.id = 'form-base-progress';
+            formBaseProgress.textContent = form.status;
+            
+            const formBaseProject = document.createElement('h3');
+            formBaseProject.id = 'form-base-project';
+            formBaseProject.textContent = form.projectID + " Project";
+
+
+            formBase.appendChild(formBaseTitle);
+            formBase.appendChild(formBaseDate);
+            formBase.appendChild(formBaseProgress);
+            formBase.appendChild(formBaseProject);
+
+            formsBaseDisplay.appendChild(formBase);
+            formsBaseDisplayWrapper.appendChild(formsBaseDisplay);
+            document.body.appendChild(formsBaseDisplayWrapper);
+        
+    }
+    
 }

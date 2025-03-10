@@ -1,6 +1,5 @@
 export default class Projects{
     constructor(name){
-        childForms = [];
         this.name = name;
     }
     setProjectOf(form, divToSearch){
